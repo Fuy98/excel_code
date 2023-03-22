@@ -1,0 +1,16 @@
+Sub HelloWorld():
+    MsgBox ("Hello World")
+    MsgBox ("How are you?")
+    MsgBox ("I´m fine")
+End Sub
+
+Sub ByeWorld():
+    MsgBox ("You want to leave?")
+    MsgBox ("you can´t?")
+    MsgBox ("Sorry")
+End Sub
+Sub Leave():
+    MsgBox ("why are you still here?")
+    MsgBox ("LEAVE!")
+    MsgBox ("please :D")
+End Sub
