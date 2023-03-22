@@ -17,3 +17,19 @@ Sub CellsAndRanges():
 
 
 End Sub
+
+Sub CreateChessBoard()
+    For Row = 1 To 8
+        For col = 1 To 8
+            If (Row + col) Mod 2 = 0 Then
+                Cells(Row, col).Interior.Color = RGB(255, 255, 255)
+                ' Cells(row, col).ColumnWidth = 10
+                Cells(Row, col).RowHeight = 30
+            Else
+                Cells(Row, col).Interior.Color = RGB(0, 0, 0)
+                ' Cells(row, col).ColumnWidth = 10
+                Cells(Row, col).RowHeight = 30
+            End If
+        Next col
+    Next Row
+End Sub
