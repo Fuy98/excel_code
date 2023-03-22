@@ -1,0 +1,49 @@
+Sub Variables():
+
+    ' Basic String Variable
+    ' ----------------------------------------
+    Dim name As String               ' Declare string variable "name"
+    name = "Gandalf"                 ' Assign "Gandalf" to "name"
+
+    MsgBox (name)                   ' Display "Gandalf" in a message box
+
+    ' Basic String Concatenation (Combination)
+    ' ----------------------------------------
+    Dim title As String              ' Declare string variable "title"
+    title = "The Great"              ' Assign "The Great" to "title"
+
+    Dim fullname As String           ' Declare string variable "fullname"
+    fullname = name + " " + title    ' Combine "name" and "title" into "fullname"
+
+    MsgBox (fullname)               ' Display "Gandalf The Great" in a message box
+
+    ' Basic Integer, Double, Long Variables
+    ' ----------------------------------------
+    Dim age1 As Integer              ' Declare integer variable "age1"
+    Dim age2 As Integer              ' Declare integer variable "age2"
+    age1 = 5                         ' Assign 5 to "age1"
+    age2 = 10                        ' Assign 10 to "age2"
+
+    Dim price As Double              ' Declare double variable "price"
+    Dim tax As Double                ' Declare double variable "tax"
+    price = 19.99                    ' Assign 19.99 to "price"
+    tax = 0.05                       ' Assign 0.05 to "tax"
+
+    Dim lightspeed As Long           ' Declare long variable "lightspeed"
+    lightspeed = 299792458           ' Assign 299792458 to "lightspeed"
+
+    ' Basic Numeric manipulation
+    ' ----------------------------------------
+    MsgBox (age1 + age2)            ' Display the result of 5+10 in a message box
+    Cells(1, 1).Value = price * (1 + tax)  ' Calculate the total price including tax and assign it to cell A1
+
+    ' String, Numeric Combination (Casting)
+    ' ----------------------------------------
+    MsgBox ("I am " + Str(age1) + " years old.")  ' Display "I am 5 years old" in a message box
+
+    ' Booleans
+    ' ----------------------------------------
+    Dim money_grows_on_trees As Boolean  ' Declare boolean variable "money_grows_on_trees"
+    money_grows_on_trees = False         ' Assign false to "money_grows_on_trees"
+
+End Sub
