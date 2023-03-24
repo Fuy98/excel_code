@@ -1,0 +1,14 @@
+Sub ForLoop()
+
+    Dim i As Integer
+    For i = 1 To 20
+    '<Instructions> by i+1 <- instructions 20 times'
+    'Places a value of 1 in A1 to A20'
+    Cells(i, 1).Value = 1
+    'Places a value of 5 in A1 to T1'
+    Cells(1, i).Value = 5
+    'Places increasing values based upon variable "i" in B2 to B2'
+    'Cells(1, i).Value = i + 1'
+    Next i
+    
+End Sub
