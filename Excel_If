@@ -1,0 +1,27 @@
+Sub BudgetChecker()
+
+    'Part1'
+    
+    Dim total As Double
+    total = Range("F3").Value * (1 + Range("H3").Value)
+    Range("L3").Value = total
+    
+    'Part2'
+    
+    Dim budget As Double
+    budget = Range("C3").Value
+    
+    If budget >= total Then
+        MsgBox ("Under Budget")
+    Else
+        MsgBox ("Over Budget")
+        'Part3'
+        Dim new_price As Double
+        new_price = budget / (1 + Range("H3").Value)
+        
+        Range("F3").Value = new_price
+        Range("L3").Value = new_price * (1 + Range("H3").Value)
+        
+    End If
+
+End Sub
