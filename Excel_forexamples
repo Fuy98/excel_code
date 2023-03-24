@@ -1,0 +1,40 @@
+Sub Lotto_Winner()
+
+    Dim first_place As Long
+    Dim second_place As Long
+    Dim third_place As Long
+    
+    first_place = 3957481
+    second_place = 5865187
+    third_place = 2817729
+    
+    For i = 1 To 1001
+       ' Check if the lotto number matches the first place winner...'
+       If Cells(i, 3).Value = first_place Then
+       MsgBox ("Congratulations" + " " + Cells(i, 1).Value)
+       ' Retrieve the values associated with the winner and enter them into the winner's box.
+       Range("F2").Value = Cells(i, 1).Value
+       Range("G2").Value = Cells(i, 2).Value
+       Range("H2").Value = Cells(i, 3).Value
+       
+       ' Check if the lotto number matches the second place winner...'
+       ElseIf Cells(i, 3).Value = second_place Then
+       MsgBox ("Congratulations in second" + " " + Cells(i, 1).Value)
+       ' Retrieve the values associated with the winner and enter them into the winner's box.'
+       Range("F3").Value = Cells(i, 1).Value
+       Range("G3").Value = Cells(i, 2).Value
+       Range("H3").Value = Cells(i, 3).Value
+            
+        ' Check if the lotto number matches the second place winner...'
+       ElseIf Cells(i, 3).Value = third_place Then
+       MsgBox ("Congratulations in third" + " " + Cells(i, 1).Value)
+       ' Retrieve the values associated with the winner and enter them into the winner's box.'
+       Range("F4").Value = Cells(i, 1).Value
+       Range("G4").Value = Cells(i, 2).Value
+       Range("H4").Value = Cells(i, 3).Value
+            
+       End If
+    
+    Next i
+
+End Sub
