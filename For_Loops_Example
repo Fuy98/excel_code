@@ -1,0 +1,39 @@
+Sub Star_counter()
+
+    Dim Star_Count As Integer
+    
+    For i = 2 To 51
+    
+        Star_Count = 0
+    
+        For j = 4 To 8
+        
+            ' Check if there are full stars in'
+            If Cells(i, j).Value = "Full-Star" Then
+            ' Add to the Star_counter.'
+            Star_Count = Star_Count + 1
+            
+            End If
+            
+        Next j
+        
+        Cells(i, j).Value = Star_Count
+            
+    Next i
+
+End Sub
+
+Sub Clean()
+
+    For i = 2 To 51
+    
+        If Cells(i, 9).Value > 0 Then
+        Cells(i, 9).Value = " "
+    
+            
+        End If
+            
+    Next i
+
+End Sub
+
