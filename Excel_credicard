@@ -35,7 +35,7 @@ Sub credit_card()
       ' Reset the Brand Total
       Brand_Total = 0
 
-    ' If the cell immediately following a row is the same brand...
+    'If the cell immediately following a row is the same brand...
     
     Else
     
