@@ -1,0 +1,67 @@
+Sub Census()
+
+  For Each ws In Worksheets
+    Dim WorksheetName As String
+
+    ' Determine the Last Row of each worksheet.
+    LastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
+
+    'Attribute
+    WorksheetName = ws.Name
+
+    ' Split the WorksheetName
+    CensusYear = Split(WorksheetName, "_")
+    ' CensusYear(0) contains 2016
+
+    ws.Range("A1").EntireColumn.Insert
+
+    ws.Cells(1, 1).Value = "Year"
+
+    ' Add the Year to all rows
+    ws.Range("A2:A" & LastRow) = CensusYear(0)
+              'A2:A3221
+
+
+        ' --------------------------------------------
+        ' SPLIT COUNTY AND STATE
+        ' --------------------------------------------
+
+        ' Add the State Column after County
+        ws.Range("C1").EntireColumn.Insert
+        
+        ' Rename Place to County
+        ws.Cells(1, 2).Value = "County"
+        
+        ' Label State Column
+        ws.Cells(1, 3).Value = "State"
+
+
+        ' Split County and State and store values in appropriate
+        ' column by looping through and renaming each
+        For i = 2 To LastRow
+            CountyState = ws.Cells(i, 2).Value
+            CSSplit = Split(CountyState, ", ")
+            'MsgBox CSSplit(1)
+            ws.Cells(i, 2).Value = CSSplit(0)
+            ws.Cells(i, 3).Value = CSSplit(1)
+        Next i
+
+         ' --------------------------------------------
+        ' CORRECT THE CURRENCY FORMAT
+        ' --------------------------------------------
+
+        ' Add the currency
+        For i = 2 To LastRow
+
+            ' For columns Household and Per Capita Income only
+            For j = 6 To 7
+
+                ws.Cells(i, j).Style = "Currency"
+                ' Normal, Currency, Percent, Comma, Title
+
+            Next j
+
+        Next i
+  Next ws
+  MsgBox ("Fixes Complete")
+End Sub
